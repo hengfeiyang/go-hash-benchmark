@@ -1,0 +1,15 @@
+github.com/OneOfOne/xxhash v1.2.8 h1:31czK/TI9sNkxIKfaUfGlU47BAxQ0ztGgd9vPyqimf8=
+github.com/OneOfOne/xxhash v1.2.8/go.mod h1:eZbhyaAYD41SGSSsnmcpxVoRiQ/MPUTjUdIIOT9Um7Q=
+github.com/cespare/xxhash/v2 v2.1.2 h1:YRXhKfTDauu4ajMg1TPgFO5jnlC2HCbmLXMcTG5cbYE=
+github.com/cespare/xxhash/v2 v2.1.2/go.mod h1:VGX0DQ3Q6kWi7AoAeZDth3/j3BFtOZR5XLFGgcrjCOs=
+github.com/creachadair/cityhash v0.1.1 h1:lFsixblDY79QBwzGNQWRvMu4mOBIuV+g3sz/3Vy3pk0=
+github.com/creachadair/cityhash v0.1.1/go.mod h1:QhWJSDPs/2AkcOUL8Ogz0ZzA5acyIihEzKBG/9NTUHs=
+github.com/klauspost/cpuid/v2 v2.0.9 h1:lgaqFMSdTdQYdZ04uHyN2d/eKdOMyi2YLSvlQIBFYa4=
+github.com/klauspost/cpuid/v2 v2.0.9/go.mod h1:FInQzS24/EEf25PyTYn52gqo7WaD8xa0213Md/qVLRg=
+github.com/tenfyzhong/cityhash v0.0.0-20181130044406-4c2731b5918c h1:Y3PUeYj+OuuOy7BnbIvtGOj9YDKjPHsZyN/2AJqN32s=
+github.com/tenfyzhong/cityhash v0.0.0-20181130044406-4c2731b5918c/go.mod h1:Izvvi9mFtnF9nbPc2Z/gazIliNnYtxOsbQnFYpmxbfc=
+github.com/zeebo/assert v1.3.0 h1:g7C04CbJuIDKNPFHmsk4hwZDO5O+kntRxzaUoNXj+IQ=
+github.com/zeebo/xxh3 v1.0.2 h1:xZmwmqxHZA8AI603jOQ0tMqmBr9lPeFwGg6d+xy9DC0=
+github.com/zeebo/xxh3 v1.0.2/go.mod h1:5NWz9Sef7zIDm2JHfFlcQvNekmcEl9ekUZQQKCYaDcA=
+github.com/zentures/cityhash v0.0.0-20131128155616-cdd6a94144ab h1:BD4YbH4Y0ysgbrP9jGuDB0BxkqyTRk6Y70o3D5Z5ayc=
+github.com/zentures/cityhash v0.0.0-20131128155616-cdd6a94144ab/go.mod h1:SvJE1nX57VqPOyqkQGEGcJPWZqeB3FCZ8s7a0uSlG+A=
