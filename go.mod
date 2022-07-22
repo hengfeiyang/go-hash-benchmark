@@ -8,9 +8,7 @@ require (
 	github.com/cespare/xxhash/v2 v2.1.2
 	github.com/creachadair/cityhash v0.1.1
 	github.com/dgryski/go-metro v0.0.0-20211217172704-adc40b04c140
-	github.com/klauspost/crc32 v1.2.0
 	github.com/minio/highwayhash v1.0.2
-	github.com/mmcloughlin/meow v0.0.0-20200201185800-3501c7c05d21
 	github.com/orisano/wyhash v1.1.0
 	github.com/shivakar/metrohash v0.0.0-20160821164112-8d1c8b6bed28
 	github.com/skeeto/pengyhash v0.0.0-20201011235239-21212c6e58a7

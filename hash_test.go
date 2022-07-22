@@ -2,7 +2,6 @@ package gohashbenchmark
 
 import (
 	"encoding/hex"
-	"hash/crc32"
 	"hash/crc64"
 	"hash/fnv"
 	"testing"
@@ -14,9 +13,7 @@ import (
 	"github.com/dgryski/go-metro"
 	"github.com/hengfeiyang/go-hash-benchmark/farmhash64"
 	"github.com/hengfeiyang/go-hash-benchmark/fnv64"
-	kcrc32 "github.com/klauspost/crc32"
 	"github.com/minio/highwayhash"
-	"github.com/mmcloughlin/meow"
 	"github.com/orisano/wyhash"
 	"github.com/shivakar/metrohash"
 	"github.com/skeeto/pengyhash"
@@ -28,6 +25,8 @@ import (
 )
 
 var key = "1QvEL0YywgM"
+
+var keyHash, _ = hex.DecodeString("000102030405060708090A0B0C0D0E0FF0E0D0C0B0A090807060504030201000") // use for minIO highwayHash
 
 func BenchmarkHash_fnv64(b *testing.B) {
 	for i := 0; i < b.N; i++ {
@@ -48,20 +47,6 @@ func BenchmarkHash_fnv32_std(b *testing.B) {
 		h := fnv.New32a()
 		h.Write([]byte(key))
 		h.Sum32()
-	}
-}
-
-func BenchmarkHash_crc32(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		table := crc32.MakeTable(crc32.IEEE)
-		crc32.Checksum([]byte(key), table)
-	}
-}
-
-func BenchmarkHash_crc32_klauspost(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		table := kcrc32.MakeTable(kcrc32.IEEE)
-		kcrc32.Checksum([]byte(key), table)
 	}
 }
 
@@ -112,19 +97,9 @@ func BenchmarkHash_cityhash_creachadair(b *testing.B) {
 	}
 }
 
-func BenchmarkHash_murmur3_32(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		h := murmur3.New32()
-		h.Write([]byte(key))
-		h.Sum32()
-	}
-}
-
 func BenchmarkHash_murmur3_64(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		h := murmur3.New64()
-		h.Write([]byte(key))
-		h.Sum64()
+		murmur3.Sum64([]byte(key))
 	}
 }
 
@@ -154,14 +129,6 @@ func BenchmarkHash_metro(b *testing.B) {
 	}
 }
 
-func BenchmarkHash_meow_mmcloughlin(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		h := meow.New64(0)
-		h.Write([]byte(key))
-		h.Sum64()
-	}
-}
-
 func BenchmarkHash_wyhash_orisano(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		wyhash.Sum64(0, []byte(key))
@@ -181,18 +148,8 @@ func BenchmarkHash_wyhash_zhangyunhao116_v3(b *testing.B) {
 }
 
 func BenchmarkHash_highwayhash_minIO(b *testing.B) {
-	keyHash, _ := hex.DecodeString("000102030405060708090A0B0C0D0E0FF0E0D0C0B0A090807060504030201000") // use your own key here
-
 	for i := 0; i < b.N; i++ {
 		highwayhash.Sum64([]byte(key), keyHash)
-	}
-}
-
-func BenchmarkHash_pengyhash(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		h := pengyhash.New(1)
-		h.Write([]byte(key))
-		h.Sum(nil)
 	}
 }
 
