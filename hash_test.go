@@ -42,14 +42,6 @@ func BenchmarkHash_fnv64_std(b *testing.B) {
 	}
 }
 
-func BenchmarkHash_fnv32_std(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		h := fnv.New32a()
-		h.Write([]byte(key))
-		h.Sum32()
-	}
-}
-
 func BenchmarkHash_crc64(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		table := crc64.MakeTable(crc64.ISO)
